@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/24162075.All6labs/lab 3/rsatool_window/build/cmake_install.cmake",
+		"D:/24162075.All6labs/lab 3/rsatool_window/build/_deps/catch2-build/cmake_install.cmake",
+		"D:/24162075.All6labs/lab 3/rsatool_window/build/_deps/catch2-build/src/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

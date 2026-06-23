@@ -1,0 +1,5 @@
+if(EXISTS "D:/24162075.All6labs/lab 3/rsatool_window/build/rsatool_tests-b12d07c_tests.cmake")
+  include("D:/24162075.All6labs/lab 3/rsatool_window/build/rsatool_tests-b12d07c_tests.cmake")
+else()
+  add_test(rsatool_tests_NOT_BUILT-b12d07c rsatool_tests_NOT_BUILT-b12d07c)
+endif()

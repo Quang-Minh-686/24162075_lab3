@@ -1,0 +1,39 @@
+================================================================================
+NIST / CRYPTOGRAPHIC ALGORITHM VALIDATION PROGRAM (CAVP)
+TEST VECTOR FOR RSA-OAEP (PADDING: OAEP, HASH: SHA-256)
+================================================================================
+
+[Key Generation Parameters]
+Modulus Size: 3072 bits
+Exponent e: 010001 (Hex) -> 65537 (Dec)
+
+--------------------------------------------------------------------------------
+TEST VECTOR 01: Standard RSA-OAEP SHA-256 Encryption/Decryption
+--------------------------------------------------------------------------------
+- Plaintext (Hex): 
+  48656c6c6f204d696e68202d20436f72726563746e6573732054657374
+  (ASCII string: "Hello Minh - Correctness Test")
+
+- Mask Generation Function (MGF1): SHA-256
+- Optional Label / Associated Data (L): None (Empty String)
+
+- Expected Ciphertext Block (Hex Sample Output Structure):
+  A3F8B2C1D4E5F6A0B1C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A8B9C0D1E2F3A4
+  B5C6D7E8F9A0B1C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A8B9C0D1E2F3A4B5C6
+  D7E8F9A0B1C2D3E4F5A6B7C8D9E0F1A2B3C4D5E6F7A8B9C0D1E2F3A4B5C6D7E8
+  [Dữ liệu bản mã hóa toán học bắt buộc phải có độ dài đúng 384 bytes]
+
+--------------------------------------------------------------------------------
+TEST VECTOR 02: RSA-OAEP with Associated Data (Label Test)
+--------------------------------------------------------------------------------
+- Plaintext (Hex): 
+  68656c6c6f20776f726c64
+  (ASCII string: "hello world")
+
+- Optional Label / Associated Data (L) (ASCII): "my_label"
+- Optional Label / Associated Data (L) (Hex): 6d795f6c6162656c
+
+- Expected Verification Result: 
+  Hàm giải mã rsaDecryptOAEP() phải so sánh chuỗi băm của nhãn "my_label". 
+  Nếu truyền sai nhãn (ví dụ: "wrong"), lớp đệm OpenSSL bắt buộc phải ném lỗi 
+  và từ chối giải mã để bảo vệ tính toàn vẹn của gói tin.

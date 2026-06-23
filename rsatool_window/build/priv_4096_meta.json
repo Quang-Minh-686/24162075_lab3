@@ -1,0 +1,7 @@
+{
+  "creation_time": "2026-06-20T15:10:13Z",
+  "modulus_bits": 4096,
+  "hash": "SHA-256",
+  "public_exponent": 65537,
+  "padding": "OAEP"
+}
